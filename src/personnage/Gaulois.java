@@ -45,12 +45,10 @@ public class Gaulois {
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("asterix", 8);
 		Gaulois obélix = new Gaulois("Obélix",10);
-		Romain DUDU = new Romain("DUDU", 7);
+		Romain DUDU = new Romain("DUDU", 6);
 		Druide Pano = new Druide("Pano",5,10);
-		asterix.parler("bonjour");
-		Pano.boost(asterix);
-		Pano.boost(obélix);
-		asterix.frapper(DUDU);
+		DUDU.sEquiper(Equipement.CASQUE);
+		DUDU.sEquiper(Equipement.CASQUE);
 	}
 
 }
