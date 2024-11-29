@@ -27,8 +27,14 @@ public class Gaulois {
 	}
 
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la m�choire de " + romain.getNom());
+		System.out.println(nom + " envoie un grand coup dans la m�choire de " + romain.getNom());
+		this.force = this.force * this.effetPotion;
 		romain.recevoirCoup(force / 3);
+	}
+	
+	public void boirPotion(int potion) {
+		this.parler("Merci Druide, je sens que ma force est " +potion+ " fois décuplée. »");
+		this.setEffetPotion(potion);
 	}
 
 	@Override
@@ -38,10 +44,13 @@ public class Gaulois {
 
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("asterix", 8);
-		System.out.println(asterix);
+		Gaulois obélix = new Gaulois("Obélix",10);
+		Romain DUDU = new Romain("DUDU", 7);
+		Druide Pano = new Druide("Pano",5,10);
 		asterix.parler("bonjour");
-		asterix.frapper(null);
-		asterix.
+		Pano.boost(asterix);
+		Pano.boost(obélix);
+		asterix.frapper(DUDU);
 	}
 
 }
